@@ -7,6 +7,7 @@
             <div class="col-lg-3 col-6 mt-3 mastercardshow">
                 <div class="containerhh mx-0 mb-3">
                     <div class="linesetting"></div>
+                    <button type="button" class="btn remove-column">ADD</button>
                     <img src="${product.Image.url}" alt="${name}">
                     <div class="linesettingsecond"></div>
                     <div class="textcardcart">
