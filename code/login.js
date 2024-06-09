@@ -19,8 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // Send data to the backend
        await fetch('http://localhost:4000/api/v1/login', {
             method: 'POST',
+			credentials: "include",
             headers: {
                 'Content-Type': 'application/json'
+				
             },
             body: JSON.stringify(formData)
         })
@@ -28,14 +30,11 @@ document.addEventListener('DOMContentLoaded', function () {
 		.then(response => response.json())
         .then(data => {
             console.log('Success:', data);
+			// document.cookie = `token=${"asdaksasfasd"};`;
+			// console.log('Auth:', data.authToken);
             // Handle success (e.g., show a success message, redirect to another page, etc.)
         })
-        // .then(data => {
-        //     console.log('Success:', data);
-        //     // Store the token in cookies
-        //     document.cookie = `token=${data.token}; path=/; secure; HttpOnly; SameSite=Strict`;
-        //     // Handle success (e.g., redirect to another page)
-        // })
+      
         .catch(error => {
             console.error('Error:', error);
             // Handle error (e.g., show an error message)

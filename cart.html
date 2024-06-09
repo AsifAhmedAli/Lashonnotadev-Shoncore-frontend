@@ -133,97 +133,52 @@
 
 
     <!-- News Section -->
-    <section class="news-section my-3 my-md-5 pt-5">
-        <div class="container  px-2 px-md-5">
-            
-            <div class="d-flex justify-content-center col-12 mt-5 mt-sm-0">
-                <h1 class="text-uppercase  more-news-card-title">CART</h1>
-            </div>
-            <div class="row px-md-5  justify-content-center">
-                
-                <div class="col-12 mt-sm-5">
-                    <div class="  d-flex more-news-container pb-2" style="overflow-x: auto;">
-                        <div class="col-lg-4 col-sm-6 col-12">
-							<div class="containerhh">
-								<div class="linesetting"></div>
-								<button type="button" class="btn remove-column">Remove</button>
-								<img src="./img/loginbansedie.png" alt="">
-								<div class="linesettingsecond"></div>
-						
-								<div class="textcardcart">
-									<h5>Diaphonic Symphonia</h5>
-								</div>
-							</div>
-						</div>
-                        <div class="col-lg-4 col-sm-6 col-12">
-							<div class="containerhh">
-								<div class="linesetting"></div>
-								<button type="button" class="btn remove-column">Remove</button>
-								<img src="./img/loginbansedie.png" alt="">
-								<div class="linesettingsecond"></div>
-						
-								<div class="textcardcart">
-									<h5>Diaphonic Symphonia</h5>
-								</div>
-							</div>
-						</div>
-                        <div class="col-lg-4 col-sm-6 col-12">
-							<div class="containerhh">
-								<div class="linesetting"></div>
-								<button type="button" class="btn remove-column">Remove</button>
-								<img src="./img/loginbansedie.png" alt="">
-								<div class="linesettingsecond"></div>
-						
-								<div class="textcardcart">
-									<h5>Diaphonic Symphonia</h5>
-								</div>
-							</div>
-						</div>
 
-						
-				
 
-                         
-                    </div>
-                </div>
-             
-                
+	<!-- code start  -->
+	<section class="news-section my-3 my-md-5 pt-5">
+		<div class="container px-2 px-md-5">
+			<div class="d-flex justify-content-center col-12 mt-5 mt-sm-0">
+				<h1 class="text-uppercase more-news-card-title">CART</h1>
+			</div>
+			<div class="row px-md-5 justify-content-center">
+				<div id="cart-items-container" class="row"></div>
+			</div>
+			<div class=" text-center checkoutntnsetting">
+			  
+				<button id="checkout-button" class="">Checkout</button>
+			</div>
+		</div>
+	  </section>
+	  
+	  <script src="https://js.stripe.com/v3/"></script>
+	  <script src="code/cart.js">
 
-				<div class="row mt-3">
-					<div class="col-2 col-md-3"></div>
-					<div class="col-8 col-md-6 d-flex justify-content-center">
-						  
-						 
-					 
-							<div class=" text-center checkoutntnsetting">
-								<a href="./CheckoutCartPayrment.html" class="text-decoration-none text-center">
-									<button type="buttom"   class=" form-control bg-transparent  " >CHECKOUT </button>
-	
-								</a>
-						
-							</div>
-					</div>
-					<div class="col-2 col-md-3"></div>
-				</div>
-                        <!-- <a href="./CheckoutCartPayrment.html">
-                            <button class="bg-transparent border-0 buttinsetting">
-                                <img src="./img/whitebutton.png" alt="" class="w-100">
-    
-                                <span>LOAD MORE</span>
-                            </button>
-                        </a> -->
-                        <!-- <button type="button" class="btn   border-white text-white  btn-lg  btn-block buttoncorder rounded-0">
-                            <span class="btncut"></span>
-                            <span class="btncut2"></span>
-                            Block level button</button> -->
+	  </script>
+	  
+	  <style>
+		#cart-items-container {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	  
+		.card {
+			flex: 1 0 21%; /* Adjust this value to control the number of cards per row */
+			margin: 10px;
+			position: relative;
+		}
+	  
+		.remove-column {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+		}
+	  </style>
+	  <script src="code/cartbutton.js">
+		 
+	  </script>
 
-                    </div>
-                   
-               
-            </div>
-         
-        </div>
-    </section>
+	<!-- code end  -->
 
 
  <!--###########> footer Start <########### -->
