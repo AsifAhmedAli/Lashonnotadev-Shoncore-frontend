@@ -20,7 +20,7 @@ function createNewsCard(news) {
 async function fetchNews() {
   try {
     console.log('Fetching news...');
-    const response = await fetch('http://localhost:4000/api/v1/allnews'); // Adjust the endpoint as needed
+    const response = await fetch(`${base_url}/allnews`); // Adjust the endpoint as needed
 
     if (!response.ok) {
       throw new Error(`Network response was not ok: ${response.statusText}`);

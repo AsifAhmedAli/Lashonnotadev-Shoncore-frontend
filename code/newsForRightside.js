@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const newsContainer = document.getElementById("news-containers");
 
     try {
-      const response = await fetch("http://localhost:4000/api/v1/allnews");
+      const response = await fetch(`${base_url}/allnews`);
       const data = await response.json();
 
       if (data.success) {

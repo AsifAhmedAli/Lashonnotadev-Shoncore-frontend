@@ -37,7 +37,7 @@ function createProductCard(product) {
 async function fetchProducts() {
     try {
         console.log('Fetching products...');
-        const response = await fetch('http://localhost:4000/api/v1/allProduct'); // Adjust the endpoint as needed
+        const response = await fetch(`${base_url}/allProduct`); // Adjust the endpoint as needed
 
         if (!response.ok) {
             throw new Error(`Network response was not ok: ${response.statusText}`);

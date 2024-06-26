@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const newsContainer = document.getElementById('news-container');
 
     // Fetch news data from the API
-    fetch('http://localhost:4000/api/v1/allnews')
+    fetch(`${base_url}/allnews`)
         .then(response => response.json())
         .then(data => {
             if (data.success && data.result) {

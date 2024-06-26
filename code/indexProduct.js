@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const productContainer = document.getElementById('product-container');
 
     // Fetch product data from the API
-    fetch('http://localhost:4000/api/v1/allProduct')
+    fetch(`${base_url}/allProduct`)
         .then(response => response.json())
         .then(data => {
             if (data.success && data.result) {

@@ -1,3 +1,5 @@
+// console.log(base_url , "This s base url")
+
 document.addEventListener('DOMContentLoaded', function () {
     // Select the form element
     const form = document.querySelector('form');
@@ -18,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Send data to the backend
         try {
-            const response = await fetch('http://localhost:4000/api/v1/login', {
+            const response = await fetch(`${base_url}/login`, {
                 method: 'POST',
                 credentials: "include",
                 headers: {
