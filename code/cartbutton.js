@@ -6,6 +6,13 @@ document.getElementById('checkout-button').addEventListener('click', async () =>
         return;
     }
 
+    //  // Check if the user is logged in by verifying the JWT token in cookies
+    //  const jwtToken = getCookie('token');
+    //  if (!jwtToken) {
+    //      alert('You must be logged in to proceed with the checkout.');
+    //      return;
+    //  }  
+
     const response = await fetch('http://localhost:4000/api/v1/create-checkout-session', {
         method: 'POST',
         headers: {

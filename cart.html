@@ -12,6 +12,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
 	<link rel="stylesheet" href="css/animate.css"> 
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -54,7 +56,7 @@
 			</a>
 
 
-			<a data-bs-toggle="modal" class="p-0" href="#exampleModalToggle">
+			<!-- <a data-bs-toggle="modal" class="p-0" href="#exampleModalToggle">
 				<div class="buttonloginjoin ">
 
 					<div class="login">
@@ -65,7 +67,7 @@
 					</div>
 
 				</div>
-			</a>
+			</a> -->
 
 
 		</div>
@@ -108,18 +110,22 @@
 				</a>
 
 
-				<a data-bs-toggle="modal" class="p-0" href="#exampleModalToggle">
-					<div class="buttonloginjoin ">
-
-						<div class="login">
-							<a data-bs-toggle="modal" href="#exampleModalToggle">LOGIN</a>
+				<div id="auth-container">
+					<a data-bs-toggle="modal" class="p-0" href="./Login.html">
+						<div class="buttonloginjoin">
+							<div class="">
+								<a id="auth-button" data-bs-toggle="modal" href="./Login.html">LOGIN</a>
+							</div>
 						</div>
-						<div class="join">
-							<a data-bs-toggle="modal" href="#exampleModalToggle">JOIN</a>
-						</div>
-
-					</div>
-				</a>
+					</a>
+				</div>
+				
+				<!-- Alert container -->
+				
+				
+				<script src="./code/signoutButton.js">
+					
+				</script>
 
 
 			</div>
@@ -133,7 +139,13 @@
 
 
     <!-- News Section -->
-
+    <!-- loader code  -->
+	<div id="ftco-loader" class="show fullscreen">
+		<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);">
+			<img src="./img/Spinner.svg" alt="">
+		</div>
+	</div>
+	<!-- loader code end  -->
 
 	<!-- code start  -->
 	<section class="news-section my-3 my-md-5 pt-5">
@@ -141,6 +153,7 @@
 			<div class="d-flex justify-content-center col-12 mt-5 mt-sm-0">
 				<h1 class="text-uppercase more-news-card-title">CART</h1>
 			</div>
+			<div id="alert-container"></div>
 			<div class="row px-md-5 justify-content-center">
 				<div id="cart-items-container" class="row"></div>
 			</div>
@@ -566,6 +579,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
  
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
  
 	   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.js"></script>

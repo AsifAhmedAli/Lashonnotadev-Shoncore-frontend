@@ -17,27 +17,59 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         // Send data to the backend
-       await fetch('http://localhost:4000/api/v1/login', {
-            method: 'POST',
-			credentials: "include",
-            headers: {
-                'Content-Type': 'application/json'
-				
-            },
-            body: JSON.stringify(formData)
-        })
-		// console.log("This data login", formData)
-		.then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-			// document.cookie = `token=${"asdaksasfasd"};`;
-			// console.log('Auth:', data.authToken);
-            // Handle success (e.g., show a success message, redirect to another page, etc.)
-        })
-      
-        .catch(error => {
+        try {
+            const response = await fetch('http://localhost:4000/api/v1/login', {
+                method: 'POST',
+                credentials: "include",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+            console.log('Response:', data);
+            
+            // Save token to localStorage
+            if (data.success == true) {
+                localStorage.setItem('token', data.authToken);
+                //redirect to home page
+                const alertContainer = document.getElementById('alert-container');
+                if (alertContainer) {
+                    const alertHtml = `
+                        <div class="alert alert-success alert-container alert-dismissible fade show" role="alert">
+                            ${`Login Successful`}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    `;
+                    alertContainer.innerHTML = alertHtml;
+                }
+                window.location.href = './index.html';
+            } else {
+                const alertContainer = document.getElementById('alert-container');
+                if (alertContainer) {
+                    const alertHtml = `
+                        <div class="alert alert-danger alert-container alert-dismissible fade show" role="alert">
+                            ${data.message}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    `;
+                    alertContainer.innerHTML = alertHtml;
+                } else {
+                    alert(data.message); // Fallback for non-Bootstrap environments
+                }
+            }
+            
+            // Optionally, redirect or perform other actions upon successful login
+            // window.location.href = '/dashboard'; // Example redirect
+
+        } catch (error) {
             console.error('Error:', error);
             // Handle error (e.g., show an error message)
-        });
+        }
     });
-});
+})

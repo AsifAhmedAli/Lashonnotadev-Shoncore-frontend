@@ -103,7 +103,7 @@
 			</a>
 
 
-			<a data-bs-toggle="modal" class="p-0" href="#exampleModalToggle">
+			<!-- <a data-bs-toggle="modal" class="p-0" href="#exampleModalToggle">
 				<div class="buttonloginjoin ">
 
 					<div class="login">
@@ -114,7 +114,7 @@
 					</div>
 
 				</div>
-			</a>
+			</a> -->
 
 
 		</div>
@@ -157,18 +157,22 @@
 				</a>
 
 
-				<a data-bs-toggle="modal" class="p-0" href="#exampleModalToggle">
-					<div class="buttonloginjoin ">
-
-						<div class="login">
-							<a data-bs-toggle="modal" href="#exampleModalToggle">LOGIN</a>
+				<div id="auth-container">
+					<a data-bs-toggle="modal" class="p-0" href="./Login.html">
+						<div class="buttonloginjoin">
+							<div class="">
+								<a id="auth-button" data-bs-toggle="modal" href="./Login.html">LOGIN</a>
+							</div>
 						</div>
-						<div class="join">
-							<a data-bs-toggle="modal" href="#exampleModalToggle">JOIN</a>
-						</div>
-
-					</div>
-				</a>
+					</a>
+				</div>
+				
+				<!-- Alert container -->
+				
+				
+				<script src="./code/signoutButton.js">
+					
+				</script>
 
 
 			</div>
@@ -219,22 +223,27 @@
 
 							</div>
 
-							<h5 class="pt-5">Order #123RGR231567Y Confirmed</h5>
+							<!-- <h5 class="pt-5">Order #123RGR231567Y Confirmed</h5> -->
 
 						</div>
 
 
 
 
-
-
+<!-- code start  -->
 						<div class="my-4 paymentbtn paymentbtns">
-							<button type="button" class="btn  btn-lg btn-block">Track Order </button>
-
+							<button id="redirectButton" type="button" class="btn btn-lg btn-block">Check Products</button>
 						</div>
-						<div class="payemntcont text-center pt-0">
+					
+						<script>
+							document.getElementById('redirectButton').addEventListener('click', function() {
+								window.location.href = 'commics.html';
+							});
+						</script>
+						<!-- code end  -->
+						<!-- <div class="payemntcont text-center pt-0">
 							<p> Generate Receipt</p>
-						</div>
+						</div> -->
 					</div>
 					<div class="col-md-3"></div>
 

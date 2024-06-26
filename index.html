@@ -47,7 +47,7 @@
 				</a>
 
 
-				<a data-bs-toggle="modal" class="p-0" href="#exampleModalToggle">
+				<!-- <a data-bs-toggle="modal" class="p-0" href="#exampleModalToggle">
 					<div class="buttonloginjoin ">
 
 						<div class="login">
@@ -58,7 +58,7 @@
 						</div>
 
 					</div>
-				</a>
+				</a> -->
 
 
 			</div>
@@ -101,18 +101,22 @@
 					</a>
 
 
-					<a data-bs-toggle="modal" class="p-0" href="#exampleModalToggle">
-						<div class="buttonloginjoin ">
-
-							<div class="login">
-								<a data-bs-toggle="modal" href="#exampleModalToggle">LOGIN</a>
+					<div id="auth-container">
+						<a data-bs-toggle="modal" class="p-0" href="./Login.html">
+							<div class="buttonloginjoin">
+								<div class="">
+									<a id="auth-button" data-bs-toggle="modal" href="./Login.html">LOGIN</a>
+								</div>
 							</div>
-							<div class="join">
-								<a data-bs-toggle="modal" href="#exampleModalToggle">JOIN</a>
-							</div>
-
-						</div>
-					</a>
+						</a>
+					</div>
+					
+					<!-- Alert container -->
+					
+					
+					<script src="./code/signoutButton.js">
+						
+					</script>
 
 
 				</div>
@@ -288,6 +292,13 @@
 				<div class="col-12 mt-md-5 ">
 					<div class="p-2  d-flex pb-4 more-news-container" style="overflow-x:auto;">
 
+						    <!-- loader code  -->
+			<div id="ftco-loader" class="show fullscreen">
+				<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);">
+					<img src="./img/Spinner.svg" alt="">
+				</div>
+			</div>
+			<!-- loader code end  -->
 						<!-- code Start -->
 						<div id="product-container" class="d-flex flex-wrap">
 					

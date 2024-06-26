@@ -35,10 +35,31 @@
 				button.addEventListener('click', event => {
 					const productIndex = event.target.getAttribute('data-product-index');
 					removeFromCart(productIndex);
+					showAlert('Product removed from cart.');
 				});
 			});
 		}
-	  
+	  // Function to show Bootstrap alert
+function showAlert(message) {
+	const alertContainer = document.getElementById('alert-container');
+	if (alertContainer) {
+		const alertHtml = `
+			<div class="alert alert-success alert-dismissible fade show" role="alert">
+				${message}
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		`;
+		alertContainer.innerHTML = alertHtml;
+
+		// Automatically remove the alert after a certain time
+		setTimeout(() => {
+			const alertElement = alertContainer.querySelector('.alert');
+			if (alertElement) {
+				alertElement.remove();
+			}
+		}, 3000); // Adjust the duration as needed
+	}
+}
 		// Function to remove product from cart
 		function removeFromCart(productIndex) {
 			let cart = JSON.parse(localStorage.getItem('cart')) || [];

@@ -47,7 +47,7 @@
 			</a>
 
 
-			<a data-bs-toggle="modal" class="p-0" href="#exampleModalToggle">
+			<!-- <a data-bs-toggle="modal" class="p-0" href="#exampleModalToggle">
 				<div class="buttonloginjoin ">
 
 					<div class="login">
@@ -58,7 +58,7 @@
 					</div>
 
 				</div>
-			</a>
+			</a> -->
 
 
 		</div>
@@ -101,18 +101,22 @@
 				</a>
 
 
-				<a data-bs-toggle="modal" class="p-0" href="#exampleModalToggle">
-					<div class="buttonloginjoin ">
-
-						<div class="login">
-							<a data-bs-toggle="modal" href="#exampleModalToggle">LOGIN</a>
-						</div>
-						<div class="join">
-							<a data-bs-toggle="modal" href="#exampleModalToggle">JOIN</a>
-						</div>
-
-					</div>
-				</a>
+                <div id="auth-container">
+                    <a data-bs-toggle="modal" class="p-0" href="./Login.html">
+                        <div class="buttonloginjoin">
+                            <div class="">
+                                <a id="auth-button" data-bs-toggle="modal" href="./Login.html">LOGIN</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Alert container -->
+                
+                
+                <script src="./code/signoutButton.js">
+                    
+                </script>
 
 
 			</div>
@@ -215,6 +219,14 @@
                     <h1 class="text-white text-center">Latest News</h1>
                     <p class="text-center text-white">Can’t-miss news and updates from across the Marvel Universe!</p>
                     
+
+                    <!-- loader code  -->
+			<div id="ftco-loader" class="show fullscreen">
+				<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);">
+					<img src="./img/Spinner.svg" alt="">
+				</div>
+			</div>
+			<!-- loader code end  -->
                     <!-- news One latest with bigger image  -->
                     <script src="code/newsOneLatest.js"></script>
 

@@ -7,7 +7,7 @@ function createProductCard(product) {
         <div class="col-lg-3 col-6 mt-3 mastercardshow">
             <div class="containerhh mx-0 mb-3">
                 <div class="linesetting"></div>
-                <button type="button" class="btn add-to-cart" data-product='${JSON.stringify(product)}'>ADD</button>
+                <button type="button" class="btn add-to-cart" data-product='${JSON.stringify(product)}' >ADD</button>
                 <img src="${product.Image.url}" alt="${name}">
                 <div class="linesettingsecond"></div>
                 <div class="textcardcart">
@@ -78,12 +78,34 @@ function setupAddToCartButtons() {
     });
 }
 
-// Function to add product to the cart
+// // Function to add product to the cart
+// function addToCart(product) {
+//     const cart = JSON.parse(localStorage.getItem('cart')) || [];
+//     cart.push(product);
+//     localStorage.setItem('cart', JSON.stringify(cart));
+//     alert(`${product.Name} added to cart!`);
+// }
+
 function addToCart(product) {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.push(product);
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${product.Name} added to cart!`);
+    
+    // Show Bootstrap danger alert instead of basic alert
+    const alertContainer = document.getElementById('alert-container');
+    if (alertContainer) {
+        const alertHtml = `
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                ${product.Name} added to cart!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        `;
+        alertContainer.innerHTML = alertHtml;
+    } else {
+        alert(`${product.Name} added to cart!`); // Fallback for non-Bootstrap environments
+    }
 }
 
 // Fetch products on page load
